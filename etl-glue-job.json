@@ -1,0 +1,238 @@
+{
+  "jobConfig": {
+    "name": "etl-glue-job",
+    "description": "",
+    "role": "arn:aws:iam::948216186415:role/glue-job-role",
+    "command": "glueetl",
+    "version": "3.0",
+    "workerType": "G.1X",
+    "numberOfWorkers": 10,
+    "maxCapacity": 10,
+    "maxRetries": 3,
+    "timeout": 2880,
+    "maxConcurrentRuns": 1,
+    "security": "none",
+    "scriptName": "etl-glue-job.py",
+    "scriptLocation": "s3://aws-glue-assets-948216186415-ap-northeast-2/scripts/",
+    "language": "python-3",
+    "jobParameters": [],
+    "tags": [],
+    "jobMode": "VISUAL_MODE",
+    "developerMode": false,
+    "connectionsList": [],
+    "temporaryDirectory": "s3://aws-glue-assets-948216186415-ap-northeast-2/temporary/",
+    "logging": true,
+    "glueHiveMetastore": true,
+    "etlAutoTuning": true,
+    "metrics": true,
+    "spark": true,
+    "bookmark": "job-bookmark-disable",
+    "sparkPath": "s3://aws-glue-assets-948216186415-ap-northeast-2/sparkHistoryLogs/",
+    "flexExecution": false,
+    "minFlexWorkers": null,
+    "pythonPath": null
+  },
+  "dag": {
+    "node-1": {
+      "nodeId": "node-1",
+      "dataPreview": false,
+      "previewAmount": 0,
+      "inputs": [],
+      "name": "Data Catalog table",
+      "generatedNodeName": "DataCatalogtable_node1",
+      "classification": "DataSource",
+      "type": "Catalog",
+      "isCatalog": true,
+      "database": "etl-db-original",
+      "table": "original",
+      "calculatedType": "",
+      "runtimeParameters": [],
+      "codeGenVersion": 2
+    },
+    "node-2": {
+      "nodeId": "node-2",
+      "dataPreview": false,
+      "previewAmount": 0,
+      "inputs": [
+        "node-1"
+      ],
+      "name": "ApplyMapping",
+      "generatedNodeName": "ApplyMapping_node2",
+      "classification": "Transform",
+      "type": "ApplyMapping",
+      "mapping": [
+        {
+          "toKey": "time",
+          "fromPath": [
+            "time"
+          ],
+          "toType": "double",
+          "fromType": "double",
+          "dropped": false
+        },
+        {
+          "toKey": "uuid",
+          "fromPath": [
+            "uuid"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "country",
+          "fromPath": [
+            "country"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "web_sites",
+          "fromPath": [
+            "web_sites"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "event",
+          "fromPath": [
+            "event"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "action",
+          "fromPath": [
+            "action"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "ping",
+          "fromPath": [
+            "ping"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "partition_0",
+          "fromPath": [
+            "partition_0"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "partition_1",
+          "fromPath": [
+            "partition_1"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "partition_2",
+          "fromPath": [
+            "partition_2"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        },
+        {
+          "toKey": "partition_3",
+          "fromPath": [
+            "partition_3"
+          ],
+          "toType": "string",
+          "fromType": "string",
+          "dropped": false
+        }
+      ],
+      "parentsValid": true,
+      "calculatedType": "",
+      "codeGenVersion": 2
+    },
+    "node-3": {
+      "nodeId": "node-3",
+      "dataPreview": false,
+      "previewAmount": 0,
+      "inputs": [
+        "node-1674647926850"
+      ],
+      "name": "S3 bucket",
+      "generatedNodeName": "S3bucket_node3",
+      "classification": "DataSink",
+      "type": "S3",
+      "streamingBatchInterval": 100,
+      "format": "json",
+      "compression": "none",
+      "path": "s3://etl-kinesis-s3-pjm1024cl/transform/",
+      "partitionKeys": [],
+      "schemaChangePolicy": {
+        "enableUpdateCatalog": false,
+        "updateBehavior": null,
+        "database": null,
+        "table": null
+      },
+      "updateCatalogOptions": "none",
+      "calculatedType": "",
+      "codeGenVersion": 2
+    },
+    "node-1674647926850": {
+      "nodeId": "node-1674647926850",
+      "dataPreview": false,
+      "previewAmount": 0,
+      "inputs": [
+        "node-2"
+      ],
+      "name": "SQL Query",
+      "generatedNodeName": "SQLQuery_node1674647926850",
+      "classification": "Transform",
+      "type": "SqlCode",
+      "sqlAliases": [
+        {
+          "from": "node-2",
+          "alias": "myDataSource"
+        }
+      ],
+      "outputSchemas": null,
+      "parentsValid": true,
+      "calculatedType": "",
+      "sqlQuery": "select * from myDataSource WHERE `event` LIKE \"left_click\"\n",
+      "codeGenVersion": 2
+    },
+    "node-1674719755517": {
+      "classification": "DataSink",
+      "type": "Catalog",
+      "name": "AWS Glue Data Catalog",
+      "inputs": [
+        "node-1674647926850"
+      ],
+      "database": "etl-db-transform",
+      "table": "transform",
+      "runtimeParameters": [],
+      "format": "json",
+      "partitionKeys": [],
+      "updateCatalogOptions": "none",
+      "schemaChangePolicy": {
+        "enableUpdateCatalog": false
+      },
+      "generatedNodeName": "AWSGlueDataCatalog_node1674719755517",
+      "codeGenVersion": 2
+    }
+  },
+  "hasBeenSaved": false
+}
