@@ -238,6 +238,8 @@ Transform Crawler을 돌려서 etl-db-transform에 Table을 생성해준 뒤, Gl
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/9761c57c-43d7-4622-9c0d-fee6a79c7295)
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/34d65cdd-0b45-4fda-a7c0-9e4abe47f17a)
 
+https://file.notion.so/f/s/2a89536e-cfd5-44de-8b80-da2da0f5df82/etl-glue-job.json?id=02514ae3-5bf6-481c-9d91-b197f641b885&table=block&spaceId=1b145bd4-e961-4b0e-881d-e3011a640ed3&expirationTimestamp=1692338400000&signature=Q70mLGCJPqFY1NHxc_nAlOGiIGXDqLtSRTsD7565FMM&downloadName=etl-glue-job.json
+
 ### Create Lambda
 Lambda Function을 하나 생성
 ```
