@@ -106,7 +106,7 @@ Lake Formation을 활용해 Glue Data Base도 생성
 Crawler를 생성해서 S3에 올라온 데이터를 크롤링할 수 있도록 생성
    - 보안그룹을 생성
 
-![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/83e2a2d8-f03c-46f5-8ec4-c35503f9f46e)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/bfbdf2b4-a4ef-43dc-b729-593ecd79ae36)
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/60fe5b26-be0e-4171-ba5e-d6b7110c442b)
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/827f7e08-a1ce-412f-bdb2-60b3762aa117)
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/8b4d0a13-4683-45ef-9a8e-690b424f096e)
