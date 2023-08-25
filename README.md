@@ -1,4 +1,4 @@
-Streaming ETL Pipeline
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/d3dafc80-ab5b-41d5-ad52-aa893ba70ca0)Streaming ETL Pipeline
 
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/caf803c9-9104-4757-a9b7-aa1e52f69bcb)
 
@@ -19,14 +19,16 @@ $ aws kinesis create-stream --stream-name etl-kinesis-stream --shard-count 2 --r
 ### Create S3 Bucket
 Kinesis Data Stream을 통해서 들어온 값을 저장하기 위한 S3 Bucket을 생성
 ```
-$ aws s3 mb s3://etl-kinesis-s3-pjm1024cl --region ap-northeast-2
+$ aws s3 mb s3://etl-kinesis-s3-seokbin --region ap-northeast-2
 ```
 S3에 저장하는 Firehose를 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/987e8e15-2d47-4a08-94d9-0f522eeec506)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/d7f8732b-b5e3-4240-b1d9-88926e8d24b9)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4e8cd3c6-0ac4-4a84-9c84-449170d53c2e)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/80ea9a95-a56c-45af-95a1-bf7f6ff39d14)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e5abc978-e2f3-4e33-a628-7664774f8000)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/3e995699-1ace-4052-861b-f9ad630a584f)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/5e3344f6-0bee-4161-aa80-29f635e79401)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/7c782ba0-0b47-4221-be19-8eff8e82936c)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/c3bcea2c-d2f5-4023-8494-4d34400ff6d8)
+
 
 Kinesis Data Stream에 데이터를 전송
 ```
@@ -86,46 +88,50 @@ $ python3 main.py
 
 Lake Location을 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/704e01ab-f1eb-4f98-a75f-ab40cc613a1c)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/6b852da5-9e75-4dff-80c3-4f38a91df89d)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/bcc174f8-aca8-462d-88d7-d1606c82eacf)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/475a7222-01f7-4dd9-9767-98ac92e976cd)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/0ac2ab55-9326-4c6d-86d4-b379abb2624c)
+
 
 총 두 개의 Data Lake Locations를 생성하였는지 확인
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/69a5602e-2145-42eb-875a-0e7e26a4705f)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/a39857c7-9229-43ba-97a3-bc82ffcb003e)
 
 Lake Formation을 활용해 Glue Data Base도 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ca8ff243-6593-4e48-a64a-61ac4dfb1e07)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f97bea0f-8791-47c3-9c3d-1f5821ba6eef)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/c1d22afb-e28d-46b4-9ed1-da8fc1e0bd24)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/20fcf4fa-7f41-4f20-bc3d-8d0705410da3)
+
 
 변형된 데이터를 저장할 DB 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1f0fdfb6-2c92-4d09-b144-11e74c150608)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4a3351ca-b8c4-4215-aefc-2dd639e9e5b1)
+
 
 Crawler를 생성해서 S3에 올라온 데이터를 크롤링할 수 있도록 생성
    - 보안그룹을 생성
 
 ![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/bfbdf2b4-a4ef-43dc-b729-593ecd79ae36)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/60fe5b26-be0e-4171-ba5e-d6b7110c442b)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/827f7e08-a1ce-412f-bdb2-60b3762aa117)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/8b4d0a13-4683-45ef-9a8e-690b424f096e)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/95f5e985-a878-428b-b21b-76a04610501a)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/14306a4b-ad8b-400b-ba67-d77bb0590296)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/91fc251b-5671-411c-9f60-54b919dd8155)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ee7e6e5e-dd8c-4cd9-85d5-f4ff002e9c9a)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/5ffbe2e0-6573-4979-ac14-1aef98bdaca8)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/93ebb87b-10c8-44b4-87d7-ba3aba3c2baf)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/0e1ebb97-a877-4253-8b44-3d92e366929b)
+
 
 data source를 설정
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e04a3f4b-405e-4eca-927d-192dc0aae957)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e4c836ce-1fbf-4add-9498-a7e16aace51d)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/b7cd32cb-efb5-42c1-8be6-7d6ecaee78ac)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/46e64bb7-9ec6-486e-9763-3e0cae989dcf)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/993dae13-f4e3-4c1e-b799-a5b5958e5c11)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/57b93af3-5d02-4531-ab83-e6949ebd457c)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/00d19e7a-18b6-46fc-b98d-e24df48da29a)
+
 
 Transform Crawler를 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/cffeade0-796e-41d8-a3a9-5eafd6ae76c9)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/179488f6-94b8-4193-a18d-34b815588439)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4e69df23-8d5c-49d2-8544-173c6f3c3aae)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/5a024fc6-08d2-410e-ac20-5de39f6e4f3e)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/0a1c2004-dfeb-4d69-ad11-1563b8a2f334)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/df895ce4-96c0-4186-bd92-a4840b2cde07)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f57a243c-b898-4a97-a007-c75f5255097a)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/cf15aedb-37f2-44f6-89d4-1321cf737612)
+
 
 ### Create Redshift Cluster
 
