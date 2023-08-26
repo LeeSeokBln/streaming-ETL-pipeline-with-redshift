@@ -135,37 +135,37 @@ Transform Crawler를 생성
 
 ### Create Redshift Cluster
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/a26e994b-d558-4b35-84c5-11c1a167bd7d)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ab4cc188-c95c-458f-a896-a553144d93d7)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/430fc567-58f5-4a63-be08-a7bc6c185247)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ae2d040d-eb94-4bd4-ac31-b96ea8a0ae53)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/29b4c3bf-ccea-412a-a911-92f924da7f5b)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4d54b3dd-b5d6-4100-a5b1-03f81747ab94)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/42cf32ba-790c-4a38-9cfb-af209d0a21a5)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/b9d602ed-da0b-431b-a44b-a67adc6683b6)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/49e45df0-095f-4486-ba13-fdde907da854)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/300987d6-af53-470f-af25-d867c0a14970)
+
 
 Cluster를 생성
 
 ### Grant Glue Database & Data Locations
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/6320b351-7021-4236-9844-37bd80ff98d8)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f68d5f38-875d-48a6-9795-7bc3ebd197b7)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/6313dbbb-17e2-4246-a353-d47cc7a6f09f)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/5bd14064-f9f7-4321-8c11-6f611a428a01)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1a88202f-2ccd-4b83-b61a-8e33c012ef8a)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/b537d14f-75a3-4b92-9d6e-df57204042d0)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/740306ce-0c80-463d-8204-b0e1ef2a05ee)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ec7f0a83-901c-45b7-a3d4-9f43d0aad022)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/cfd33421-a8dd-40b1-8ebc-7140bd3a6df6)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/05ac1e4d-dc02-4cf2-8be3-36c1d135c014)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/cfb15f30-3202-47a9-9fac-10d4f3614d82)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/25e273eb-93e9-4ae3-a2e0-00c8d5b1ccae)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1e1a4f07-b572-4dea-9d99-89bfc33be6ee)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1a7f1f33-e1b2-43d2-aeed-282bf6369d2a)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1fbae189-7ce2-4496-b7ed-b3eb9234fcff)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/c57bf1b3-e241-4a26-a18f-f2dcc9624d2a)
 
 Run Crawler
 
-etl-db-transform Table에 대한 권한 Grant 
+etl-db-transform Table에 대한 권한도 똑같이 Grant 
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4d8028e9-fd2d-40d0-86d5-016de9dfb75e)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/a51f8412-7fbc-4859-b10f-e78c324c98bc)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4c1f9d52-7e82-47d9-ae4e-647e11a585a4)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4368f850-1e97-42d8-b29b-ccd0aaa7045a)
+
 
 ### Create Glue Job
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/55f10aeb-5477-4742-99ce-a1f9c47da8c4)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/de836410-e9b7-4f78-becf-2c864e37162e)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/682f287c-666e-4d7e-bfde-ef38973bfde7)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/eefd3c90-80a7-4aa9-9d36-a9e71dbf175c)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/c315db5e-3409-45dd-97a3-9cc3a3fd54b3)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/83099f3c-42dc-4997-9756-2ea30890d1cc)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/56d6fc36-6b19-4592-81d2-a7533b176061)
+
 ```
 select * from myDataSource WHERE `event` LIKE "left_click"
 ```
