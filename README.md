@@ -1,4 +1,4 @@
-![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/d3dafc80-ab5b-41d5-ad52-aa893ba70ca0)Streaming ETL Pipeline
+Streaming ETL Pipeline
 
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/caf803c9-9104-4757-a9b7-aa1e52f69bcb)
 
@@ -169,10 +169,13 @@ etl-db-transform Table에 대한 권한도 똑같이 Grant
 ```
 select * from myDataSource WHERE `event` LIKE "left_click"
 ```
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/220e02c2-f2f5-46ea-b37e-1c79525f7ac3)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/a5c8a0ac-a33e-43c9-b3d8-6fb0253138d8)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e714b905-4e01-4d30-a982-31a09614419c)
+
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f38a864a-095a-400b-85a1-cba42b2fa0a2)
+
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/226da8f2-c95f-4fdf-a0bd-f75f110b793d)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/5c6aa3d1-4d70-4b3c-add8-3fc12996f6d2)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/4c028bb9-6d42-4c1d-9f57-e7de60168802)
+
 ```
 {
     "Version": "2012-10-17",
@@ -219,7 +222,7 @@ select * from myDataSource WHERE `event` LIKE "left_click"
 SAVE > RUN
 S3 버킷에 아래와 같이 파일이 업로드됨
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f8a44dd5-cd86-4443-8662-5efb42fd52fb)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e6b93746-4ac7-4dea-929f-748287929802)
 
 Crawler ROle의 IAM Role을 수정
 ```
@@ -270,17 +273,20 @@ def lambda_handler(event, context):
 ```
 S3에 Event Trigger를 설정
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/73cb9b6d-57fb-42ed-8bf5-2ec426ed04cb)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1c67fb4a-d76b-4542-8ad0-e515f5183e2a)
+
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/90aa1afe-554f-431f-84fb-2b6ec410d59b)
 
 해당 Lambda IAM Role에 위와 같은 권한부여
 
 ### Create EventBridge
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/3b575fc2-039f-4d0e-8f6f-643015125722)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ec56a27f-775c-4676-a4d4-7bf4322df9f1)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1d169866-60cc-45fa-ade2-ad1e71a84dd3)
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/1bae69df-eeb5-4e2f-9f60-46b599abab03)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/3e8018ab-c56e-44e8-8d1c-75bc3c327d6a)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/2808e5b2-1ca7-4243-9943-743b43a0a309)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/78fe2b84-d79f-471d-beb8-d90a5629c5a4)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/6ff983ad-533a-43a7-9976-0c3560855c24)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/b418769c-9ae4-4f5f-9d58-4d6fa00a7550)
+
 ```
 {
     "detail-type": [
@@ -299,7 +305,8 @@ S3에 Event Trigger를 설정
     }
 }
 ```
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/d8324045-ecb7-4b04-a22c-258642fda985)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/a6b87e8e-69c8-4c9d-8a88-4856824c71a7)
+
 
 생성
 
@@ -316,7 +323,7 @@ Redshift에서 아래와 같은 SQL 문을 입력하면 Redshift에서 Glue Data
 create external schema spectrums
 from data catalog
 database 'etl-db-transform'
-iam_role 'arn:aws:iam::948216186415:role/service-role/AWSGlueServiceRole-roles';
+iam_role 'arn:aws:iam::<계정id>:role/service-role/AWSGlueServiceRole-roles';
 
 CREATE TABLE transform
 diststyle all
