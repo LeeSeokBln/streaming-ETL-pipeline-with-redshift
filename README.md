@@ -318,7 +318,7 @@ Glue Job도 실행
 
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/f29e8f7c-0f2e-473c-8b57-7047adc931f9)
 
-Redshift에서 아래와 같은 SQL 문을 입력하면 Redshift에서 Glue Database에 있는 데이터를 불러와서 조회
+Athena에서 아래와 같은 SQL 문을 입력하면 Redshift에서 Glue Database에 있는 데이터를 불러와서 조회
 ```
 create external schema spectrums
 from data catalog
