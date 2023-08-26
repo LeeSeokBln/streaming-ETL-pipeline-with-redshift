@@ -23,7 +23,7 @@ $ aws s3 mb s3://etl-kinesis-s3-seokbin --region ap-northeast-2
 ```
 S3에 저장하는 Firehose를 생성
 
-![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e5abc978-e2f3-4e33-a628-7664774f8000)
+![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/e5abc978-e2f3-4e33-a628-7664774f8000)
 
 ![image](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/3e995699-1ace-4052-861b-f9ad630a584f)
 
