@@ -1,4 +1,4 @@
-![91fc251b-5671-411c-9f60-54b919dd8155](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/ef5c5aac-a4ad-4084-b8a5-daa8d63dcb3a)![91fc251b-5671-411c-9f60-54b919dd8155](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/205ee69c-249a-467e-9115-329e70d6fd64)![3e995699-1ace-4052-861b-f9ad630a584f](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/629ec865-2733-4561-b6ad-a70462fc4c1a)Streaming ETL Pipeline
+## Streaming ETL Pipeline
 
 ![Untitled](https://github.com/LeeSeokBln/streaming-ETL-pipeline-with-redshift/assets/101256150/caf803c9-9104-4757-a9b7-aa1e52f69bcb)
 
